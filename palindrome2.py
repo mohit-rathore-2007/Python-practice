@@ -3,15 +3,6 @@
 # Input : Codemos # Output : cODEMOs
 
 
-"""x = "sunny"
-print(x)
-for i in x:
-	y = x[0::4]
-	z = y.upper()
-
-print(z)"""
-
-
 x = input("Enter string : ")
 y = ""
 
