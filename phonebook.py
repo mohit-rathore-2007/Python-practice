@@ -1,5 +1,5 @@
 # phonebook with CRUD operations 
-#to run the program see phonebook_main.py all the functions call and runned in it.
+#to run the program see phonebook_main.py all the functions call and runned in it
 
 data_file = "contacts.txt"
 
