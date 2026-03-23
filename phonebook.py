@@ -1,13 +1,27 @@
 # phonebook with CRUD operations 
 #to run the program see phonebook_main.py all the functions call and runned in it
+# added RegEx
+import re
 
 data_file = "contacts.txt"
 
 def create_contact():
 	print("=============================")
 	name = input("Enter Contact Name : ")
-	email = input("Enter Contact Email : ")
-	phone_number = input("Enter Contact Phone Number : ")
+
+	while True:
+		email = input("Enter Contact Email : ")
+		if re.match(r"^[\w\.-]+@[\w\.-]+\.\w+$", email):
+			break
+		else:
+			print("Invlid email format")
+
+	while True:
+		phone_number = input("Enter Contact Phone Number : ")
+		if re.match(r"^\d{10}$",phone_number):
+			break
+		else:
+			print("invalid number format")
 	print("Contact Added Successfully")
 	print("=============================")
 	file=open(data_file,"a")
@@ -61,12 +75,25 @@ def update_contact():
 	change_choice = int(input("Press 1 to Change Name\nPress 2 to Change Email\nPress 3 to change Phone\nEnter valid change choice : "))
 	if change_choice == 1 : 
 		update_contact[0] = input("Enter New Name : ")
+
 	elif change_choice == 2 : 
-		update_contact[1] = input("Enter New Email : ")
-	elif change_choice == 3 : 
-		update_contact[2] = input("Enter New Phone : ")
-	else : 
-		print("Invalid choice")
+		while True:
+			new_email = input("enter new email : ")
+			if re.match(r"^[\w\.-]+@[\w\.-]+\.\w+$",new_email):
+				update_contact[1] = new_email
+				break
+			else:
+				print("invalid email format")
+
+	elif change_choice == 3 :
+		while True:
+			new_phone = input("enter new phone number")
+			if re.match(r"^\d{10}$",new_phone):
+				update_contact[2] = new_phone
+				break
+			else:
+				print("invalid phone number")
+
 
 	update_contact_entry = "{},{},{}\n".format(update_contact[0],update_contact[1],update_contact[2])
 	change_index = contact_records.index(current_contact_entry)
@@ -86,8 +113,8 @@ def delete_contact():
 			display_record(contact_item)
 			current_contact_entry = "{},{},{}\n".format(contact_item[0], contact_item[1], contact_item[2])
 			break
-		else:
-			print("Contact not found")
+	else:
+		print("Contact not found")
 		return
 	contact_records.remove(current_contact_entry)
 	records = write_records(contact_records)
