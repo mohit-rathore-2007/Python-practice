@@ -1,4 +1,5 @@
 #Que-5
+#guess the season by month input
 def check_season(m):
 	if m=="March" or m=="April" or m=="May":
 		print("Spring season")
