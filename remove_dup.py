@@ -1,6 +1,5 @@
 def remove_duplicate(x):
 
-
 	result_lst = []
 
 	for i in x:
@@ -12,4 +11,3 @@ def remove_duplicate(x):
 
 a = [1, 2, 2, 3, 4, 4, 5]
 print(remove_duplicate(a)) 
-
