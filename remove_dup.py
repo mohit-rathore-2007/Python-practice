@@ -1,3 +1,4 @@
+#remove duplicate integers from the list
 def remove_duplicate(x):
 
 	result_lst = []
