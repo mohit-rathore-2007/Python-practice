@@ -11,10 +11,9 @@ else:
 
 
 num = int(input("enter a number"))
-
 '''
 
 num = int(input("enter a num : "))
 
 for i in range(1,num):
-	print(i)
+	print(i) 
