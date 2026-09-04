@@ -4,7 +4,6 @@
 
 num = 75869
 
-
 digits = []
 
 for d in str(num):
@@ -22,4 +21,3 @@ for i in digits:
 
 print("largest", largest)
 print("Smallest", smallest)
-	   	
