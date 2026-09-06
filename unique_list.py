@@ -1,4 +1,4 @@
-#Write a Python program to find the common elements between two lists
+# Write a Python program to find the common elements between two lists
 
 def find_common_elements(list1, list2):
 	common_elements = []
@@ -10,7 +10,6 @@ def find_common_elements(list1, list2):
 	return common_elements
 
 list1 = ["mohit", "rathod", "he", "is", "hello world"]
-
 list2 = ["mohit", "rathod", "he", "hello python"]
 
 result = find_common_elements(list1,list2)
