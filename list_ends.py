@@ -11,7 +11,3 @@ start_end = a[0], a[-1]
 result_lst.append(start_end)
 
 print(result_lst)
-
-
-
-
